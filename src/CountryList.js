@@ -5,6 +5,7 @@ import './CountryList.css';
 
 const CountryList = () => {
   const [countries, setCountries] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchCountries = async () => {
@@ -17,6 +18,7 @@ const CountryList = () => {
         setCountries(data);
       } catch (error) {
         console.error('Error fetching countries:', error.message);
+        setError('Failed to fetch countries');
       }
     };
 
@@ -25,16 +27,20 @@ const CountryList = () => {
 
   return (
     <div className="country-list">
-      {countries.map((country, index) => (
-        <div key={country.name.common} className="country-card">
-          <img
-            src={country.flags.svg}
-            alt={`Flag of ${country.name.common}`}
-            className="country-flag"
-          />
-          <span className="country-name">{country.name.common}</span>
-        </div>
-      ))}
+      {error ? (
+        <div className="error-message">{error}</div>
+      ) : (
+        countries.map((country) => (
+          <div key={country.name.common} className="country-card">
+            <img
+              src={country.flags.svg}
+              alt={`Flag of ${country.name.common}`}
+              className="country-flag"
+            />
+            <span className="country-name">{country.name.common}</span>
+          </div>
+        ))
+      )}
     </div>
   );
 };
