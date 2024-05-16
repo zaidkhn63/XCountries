@@ -20,7 +20,8 @@
     margin: 10px; /* Adjust margin for spacing between cards */
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 12px; 
+    border-radius: 8px;
+    padding: 12px; /* Add padding inside each card for gap */
   }
   
   .country-flag {
