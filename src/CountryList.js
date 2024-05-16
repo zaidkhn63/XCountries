@@ -51,7 +51,7 @@ const CountryList = () => {
       ) : (
         <div className="country-cards-container">
           {filteredCountries.map((country) => (
-            <div key={country.name.common} className="country-card">
+            <div key={country.name.common} className="countryCard">
               <img
                 src={country.flags.svg}
                 alt={`Flag of ${country.name.common}`}

@@ -15,7 +15,7 @@
     justify-content: center; /* Center the country cards horizontally */
   }
   
-  .country-card {
+  .countryCard {
     width: calc(14% - 20px); /* Calculate width for 7 cards in a row with spacing */
     margin: 10px; /* Adjust margin for spacing between cards */
     text-align: center;
